@@ -25,7 +25,7 @@ Before running the script, you'll need the following:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/YourUsername/Weather-API-Script.git](https://github.com/YourUsername/Weather-API-Script.git)
+    git clone [https://github.com/YourUsername/API_Weather.git](https://github.com/YourUsername/API_Weather.git)
     cd Weather-API-Script
     ```
 
