@@ -1,20 +1,24 @@
-# Weather API Script
+# API_Weather
 
-This repository contains a simple Python script (`API_Weather.py`) that allows you to fetch current weather information using the OpenWeatherMap API.
+This repository contains a Jupyter Notebook (`API_Weather.ipynb`) that allows you to fetch current weather information using the OpenWeatherMap API.
 
 ## Features
 
 * **Current Weather Data:** Retrieves current temperature and weather description for a specified location.
-* **User Input:** Prompts the user to enter the city, state code, and country code for the desired weather forecast.
+* **Interactive Input:** Utilizes Jupyter's interactive capabilities to prompt the user for city, state code, and country code.
 * **Error Handling:** Provides informative messages for successful requests or API errors.
 
 ## Getting Started
 
 ### Prerequisites
 
-Before running the script, you'll need the following:
+Before running the notebook, you'll need the following:
 
 * Python 3.x installed.
+* Jupyter Notebook installed. You can install it using pip:
+    ```bash
+    pip install notebook
+    ```
 * `requests` library: You can install it using pip:
     ```bash
     pip install requests
@@ -26,32 +30,52 @@ Before running the script, you'll need the following:
 1.  **Clone the repository:**
     ```bash
     git clone [https://github.com/YourUsername/API_Weather.git](https://github.com/YourUsername/API_Weather.git)
-    cd Weather-API-Script
+    cd API_Weather
     ```
 
 2.  **Obtain an API Key:**
-    * Go to the [OpenWeatherMap website](https://openweathermap.org/api) and sign up for a free account.
+    * Go to the [OpenWeatherMap website](https://openweathermap.openweathermap.org/api) and sign up for a free account.
     * Generate an API key from your account dashboard.
 
-3.  **Update the API Key in the script:**
-    * Open `API_Weather.py` in a text editor.
-    * Replace `"---"` with your actual OpenWeatherMap API key:
-        ```python
-        api_key = "YOUR_API_KEY_HERE"
-        ```
+3.  **Set your OpenWeatherMap API Key as an Environment Variable (Recommended for Security):**
+    For security, it's recommended to store your API key as an environment variable named `OPENWEATHER_API_KEY`. The notebook will then read this variable.
 
-4.  **Run the script:**
+    * **On Linux/macOS:**
+        Open your terminal and run:
+        ```bash
+        export OPENWEATHER_API_KEY="YOUR_API_KEY_HERE"
+        ```
+        (To make this persistent across sessions, add this line to your `~/.bashrc`, `~/.zshrc`, or equivalent shell configuration file.)
+
+    * **On Windows (Command Prompt):**
+        Open Command Prompt and run:
+        ```cmd
+        set OPENWEATHER_API_KEY="YOUR_API_KEY_HERE"
+        ```
+        (This sets the variable temporarily for the current session. For a permanent setting, search for "Environment Variables" in Windows and add a new system or user variable.)
+
+    * **On Windows (PowerShell):**
+        Open PowerShell and run:
+        ```powershell
+        $env:OPENWEATHER_API_KEY="YOUR_API_KEY_HERE"
+        ```
+        (This is temporary. For permanent setting, you can add it to your PowerShell profile.)
+
+4.  **Launch Jupyter Notebook:**
+    From the `API_Weather` directory, run:
     ```bash
-    python API_Weather.py
+    jupyter notebook
     ```
 
-5.  **Follow the prompts:**
-    The script will ask you to enter the city, country code, and state code.
+5.  **Open and Run the Notebook:**
+    * In your web browser, Jupyter will open. Click on `API_Weather.ipynb` to open the notebook.
+    * Go through the cells and run them in order. The notebook will prompt you for the city, country code, and state code.
 
+    Expected output in the notebook might look like:
     ```
     Enter a city : London
     Enter a Country Code : UK
-    Enter a State Code : 
+    Enter a State Code :
     Weather in London: broken clouds, 15.6C
     ```
     *(Note: State code might not be applicable or necessary for all countries/cities. If unsure, you can leave it blank for some locations.)*
